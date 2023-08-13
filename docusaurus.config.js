@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Geaux.Online',
-  tagline: 'Home of the world famous College Football Viewers Guide among other things.',
+  tagline: 'Home of the world famous College Football Viewers Guide.',
   url: 'https://geaux.online',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -49,6 +49,13 @@ const config = {
           alt: 'Geaux.Online',
           src: 'img/logo.svg',
         },
+        items: [
+          {
+            type: 'doc',
+            docId: 'intro',
+            position: 'left',
+            label: 'About',
+          },
           {to: '/blog', label: 'Content', position: 'left'},
           {
             href: 'https://www.linkedin.com/in/jeff-diecks',
