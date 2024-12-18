@@ -18,7 +18,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <main className="container mx-auto mt-8 px-4">{children}</main>
       <footer className="bg-gray-200 mt-8 p-4">
         <div className="container mx-auto text-center">
-          © 2024 Geaux Online
+          © 2023 Geaux Online
         </div>
       </footer>
     </>
