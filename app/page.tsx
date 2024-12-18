@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { getSortedPostsData } from './utils/mdUtils'
+import { getSortedPostsData } from './lib/mdUtils'
 
 export default function Home() {
   const allPostsData = getSortedPostsData()

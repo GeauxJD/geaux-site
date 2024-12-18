@@ -1,4 +1,4 @@
-import { getPostData } from '../utils/mdUtils'
+import { getPostData } from '../lib/mdUtils'
 import ReactMarkdown from 'react-markdown'
 
 export default function About() {

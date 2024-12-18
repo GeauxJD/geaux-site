@@ -1,4 +1,4 @@
-import { getPostData, getSortedPostsData } from '../../utils/mdUtils'
+import { getPostData, getSortedPostsData } from '../../lib/mdUtils'
 import ReactMarkdown from 'react-markdown'
 
 export async function generateStaticParams() {
