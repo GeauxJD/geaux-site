@@ -7,7 +7,7 @@ const postsDirectory = path.join(process.cwd(), 'posts')
 export interface Post {
   id: string;
   title: string;
-  date?: string;     // Made optional since it's not in frontmatter
+  date: string;
   content: string;
   slug: string;      // Made required since it's always present
   authors: {         // Made required since it's always present
