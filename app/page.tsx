@@ -1,12 +1,11 @@
 import Link from 'next/link'
 import { getSortedPostsData } from '../utils/mdUtils'
-import Layout from './components/layout'
 
 export default function Home() {
   const allPostsData = getSortedPostsData()
 
   return (
-    <Layout>
+    <>
       <div className="mb-12">
         <h1 className="text-2xl font-bold text-black mb-4">Home of the world famous College Football Viewers Guide</h1>
       </div>
@@ -21,7 +20,7 @@ export default function Home() {
           </li>
         ))}
       </ul>
-    </Layout>
+    </>
   )
 }
 

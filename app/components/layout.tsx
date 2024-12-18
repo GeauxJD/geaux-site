@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="min-h-screen bg-gray-100">
+    <>
       <header className="bg-[rgb(36,85,163)] text-white p-4">
         <div className="container mx-auto flex justify-between items-center">
           <Link href="/" className="text-2xl font-bold">
@@ -18,10 +18,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <main className="container mx-auto mt-8 px-4">{children}</main>
       <footer className="bg-gray-200 mt-8 p-4">
         <div className="container mx-auto text-center">
-          © 2023 Geaux Online
+          © 2024 Geaux Online
         </div>
       </footer>
-    </div>
+    </>
   )
 }
 
