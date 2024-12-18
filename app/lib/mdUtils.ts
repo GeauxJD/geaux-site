@@ -4,19 +4,19 @@ import matter from 'gray-matter'
 
 const postsDirectory = path.join(process.cwd(), 'posts')
 
-interface Post {
+export interface Post {
   id: string;
   title: string;
-  date: string;
+  date?: string;     // Made optional since it's not in frontmatter
   content: string;
-  slug?: string;
-  authors?: {
+  slug: string;      // Made required since it's always present
+  authors: {         // Made required since it's always present
     name: string;
     title: string;
     url: string;
     image_url: string;
   };
-  tags?: string[];
+  tags: string[];    // Made required since it's always present
 }
 
 export function getSortedPostsData(): Omit<Post, 'content'>[] {
