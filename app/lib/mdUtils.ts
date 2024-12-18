@@ -4,7 +4,22 @@ import matter from 'gray-matter'
 
 const postsDirectory = path.join(process.cwd(), 'posts')
 
-export function getSortedPostsData() {
+export interface Post {
+  id: string;
+  title: string;
+  date?: string;     // Made optional since it's not in frontmatter
+  content: string;
+  slug: string;      // Made required since it's always present
+  authors: {         // Made required since it's always present
+    name: string;
+    title: string;
+    url: string;
+    image_url: string;
+  };
+  tags: string[];    // Made required since it's always present
+}
+
+export function getSortedPostsData(): Omit<Post, 'content'>[] {
   // Get file names under /posts
   const fileNames = fs.readdirSync(postsDirectory)
   const allPostsData = fileNames.map((fileName) => {
@@ -34,7 +49,7 @@ export function getSortedPostsData() {
   })
 }
 
-export function getPostData(id: string) {
+export function getPostData(id: string): Post {
   const fullPath = path.join(postsDirectory, `${id}.md`)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
 
@@ -45,7 +60,9 @@ export function getPostData(id: string) {
   return {
     id,
     content: matterResult.content,
-    ...(matterResult.data as { date: string; title: string })
+    title: matterResult.data.title,
+    date: matterResult.data.date,
+    ...matterResult.data
   }
 }
 
