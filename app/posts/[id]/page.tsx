@@ -1,4 +1,4 @@
-import { getPostData, getSortedPostsData } from '../../lib/mdUtils'
+import { getPostData, getSortedPostsData, Post } from '../../lib/mdUtils'
 import ReactMarkdown from 'react-markdown'
 
 export async function generateStaticParams() {
@@ -9,7 +9,7 @@ export async function generateStaticParams() {
 }
 
 export default function Post({ params }: { params: { id: string } }) {
-  const postData = getPostData(params.id)
+  const postData: Post = getPostData(params.id)
   
   // Format the date
   const formattedDate = new Date(postData.date).toLocaleDateString('en-US', {
