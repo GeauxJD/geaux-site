@@ -65,3 +65,4 @@ export function getPostData(id: string): Post {
     ...matterResult.data
   }
 }
+
