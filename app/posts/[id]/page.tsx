@@ -1,5 +1,4 @@
 import { getPostData, getSortedPostsData } from '../../lib/mdUtils'
-import type { Post } from '../../lib/mdUtils'
 import ReactMarkdown from 'react-markdown'
 
 export async function generateStaticParams() {
@@ -10,20 +9,24 @@ export async function generateStaticParams() {
 }
 
 export default function Post({ params }: { params: { id: string } }) {
-  const postData: Post = getPostData(params.id)
-  
-  // Format the date
-  const formattedDate = new Date(postData.date).toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
-  })
+  const postData = getPostData(params.id)
 
   return (
-    <article className="prose lg:prose-xl mx-auto">
-      <h1 className="text-3xl font-bold mb-4">{postData.title}</h1>
-      <div className="text-gray-500 mb-8">{formattedDate}</div>
-      <ReactMarkdown>{postData.content}</ReactMarkdown>
+    <article className="max-w-4xl mx-auto">
+      <header className="mb-8">
+        <h1 className="text-3xl font-bold text-black mb-4">{postData.title}</h1>
+        <time className="text-gray-500">
+          {new Date(postData.date).toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+          })}
+        </time>
+      </header>
+      <div className="prose prose-lg max-w-none">
+        <ReactMarkdown>{postData.content}</ReactMarkdown>
+      </div>
     </article>
   )
 }
+
