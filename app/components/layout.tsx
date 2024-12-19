@@ -2,30 +2,34 @@ import Link from 'next/link'
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="min-h-screen flex flex-col bg-white">
-      <header className="bg-[rgb(36,85,163)] text-white shadow-md">
-        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <Link 
-            href="/" 
-            className="text-2xl font-bold tracking-tight hover:text-white/90 transition-colors"
-          >
-            Geaux Online
-          </Link>
-          <nav>
+    <div className="min-h-screen flex flex-col">
+      <header className="bg-[rgb(36,85,163)]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+          <div className="flex justify-between items-center">
             <Link 
-              href="/about" 
-              className="text-sm text-white/90 hover:text-white transition-colors hover:underline"
+              href="/" 
+              className="text-2xl font-bold text-white hover:opacity-90 transition-opacity"
             >
-              About
+              Geaux Online
             </Link>
-          </nav>
+            <nav>
+              <Link 
+                href="/about" 
+                className="text-sm text-white hover:opacity-90 transition-opacity"
+              >
+                About
+              </Link>
+            </nav>
+          </div>
         </div>
       </header>
-      <main className="flex-1 container mx-auto px-4 py-8">
-        {children}
+      <main className="flex-1 py-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          {children}
+        </div>
       </main>
-      <footer className="bg-gray-100 border-t">
-        <div className="container mx-auto px-4 py-6 text-center text-sm text-gray-600">
+      <footer className="py-6 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm text-gray-600">
           © 2023 Geaux Online
         </div>
       </footer>
