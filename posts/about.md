@@ -1,11 +1,7 @@
 ---
 title: 'What's in a name?'
 date: '2019-09-04'
-authors:
-  - name: Jeff Diecks
-    title: geaux.online
-    url: https://geaux.online
-    image_url: https://avatars.githubusercontent.com/u/55294502?s=96&v=4
+authors: 'Jeff Diecks'
 tags: [about]
 ---
 

@@ -9,14 +9,9 @@ export interface Post {
   title: string;
   date: string;
   content: string;
-  slug?: string;      // Made optional since not all posts have it
-  authors?: {         // Made optional since not all posts have it
-    name: string;
-    title: string;
-    url: string;
-    image_url: string;
-  };
-  tags?: string[];    // Made optional since not all posts have it
+  slug?: string;
+  authors?: string;
+  tags?: string[];
 }
 
 export function getSortedPostsData(): Omit<Post, 'content'>[] {
