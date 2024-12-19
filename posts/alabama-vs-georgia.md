@@ -1,6 +1,6 @@
 ---
-title: 'Geaux Online: Alabama vs Georgia - A Classic SEC Showdown'
-date: '2023-09-16'
+title: "Geaux Online: Alabama vs Georgia - A Classic SEC Showdown"
+date: "2023-09-16"
 ---
 
 # Geaux Online: Alabama vs Georgia - A Classic SEC Showdown

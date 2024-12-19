@@ -1,7 +1,7 @@
 ---
-title: 'What's in a name?'
-date: '2019-09-04'
-authors: 'Jeff Diecks'
+title: "What's in a name?"
+date: "2019-09-04"
+authors: "Jeff Diecks"
 tags: [about]
 ---
 
