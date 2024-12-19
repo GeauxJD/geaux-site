@@ -7,13 +7,9 @@ export default function About() {
   return (
     <article className="max-w-4xl mx-auto">
       <header className="mb-8">
-        <h1 className="text-3xl font-bold text-black mb-4">{postData.title}</h1>
-        <time className="text-gray-500">
-          {new Date(postData.date).toLocaleDateString('en-US', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric'
-          })}
+        <h1 className="text-3xl font-bold mb-2">{postData.title}</h1>
+        <time dateTime={postData.date} className="text-gray-600">
+          {postData.date}
         </time>
       </header>
       <div className="prose prose-lg max-w-none">

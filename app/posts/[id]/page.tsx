@@ -1,8 +1,15 @@
-import { getPostData } from '../lib/mdUtils'
+import { getPostData, getSortedPostsData } from '../../lib/mdUtils'
 import ReactMarkdown from 'react-markdown'
 
-export default function About() {
-  const postData = getPostData('about')
+export async function generateStaticParams() {
+  const posts = getSortedPostsData()
+  return posts.map((post) => ({
+    id: post.id,
+  }))
+}
+
+export default function Post({ params }: { params: { id: string } }) {
+  const postData = getPostData(params.id)
 
   return (
     <article className="max-w-4xl mx-auto">
