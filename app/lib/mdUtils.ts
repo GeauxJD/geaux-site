@@ -9,43 +9,37 @@ export interface Post {
   title: string;
   date: string;
   content: string;
-  slug: string;      // Made required since it's always present
-  authors: {         // Made required since it's always present
+  slug?: string;      // Made optional since not all posts have it
+  authors?: {         // Made optional since not all posts have it
     name: string;
     title: string;
     url: string;
     image_url: string;
   };
-  tags: string[];    // Made required since it's always present
+  tags?: string[];    // Made optional since not all posts have it
 }
 
 export function getSortedPostsData(): Omit<Post, 'content'>[] {
-  // Get file names under /posts
   const fileNames = fs.readdirSync(postsDirectory)
   const allPostsData = fileNames.map((fileName) => {
-    // Remove ".md" from file name to get id
     const id = fileName.replace(/\.md$/, '')
-
-    // Read markdown file as string
     const fullPath = path.join(postsDirectory, fileName)
     const fileContents = fs.readFileSync(fullPath, 'utf8')
-
-    // Use gray-matter to parse the post metadata section
     const matterResult = matter(fileContents)
 
-    // Combine the data with the id
     return {
       id,
-      ...(matterResult.data as { date: string; title: string })
+      title: matterResult.data.title,
+      date: matterResult.data.date,
+      slug: matterResult.data.slug || id,
+      authors: matterResult.data.authors,
+      tags: matterResult.data.tags || []
     }
   })
-  // Sort posts by date
+
   return allPostsData.sort((a, b) => {
-    if (a.date < b.date) {
-      return 1
-    } else {
-      return -1
-    }
+    if (a.date < b.date) return 1
+    else return -1
   })
 }
 
