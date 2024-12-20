@@ -41,14 +41,18 @@ export function getSortedPostsData(): Omit<Post, 'content'>[] {
 export function getPostData(id: string): Post {
   const fullPath = path.join(postsDirectory, `${id}.md`)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
-
-  // Use gray-matter to parse the post metadata section
   const matterResult = matter(fileContents)
+  
+  // Remove first H1 heading from content
+  const contentWithoutTitle = matterResult.content
+    .split('\n')
+    .filter(line => !line.startsWith('# '))
+    .join('\n')
+    .trim()
 
-  // Combine the data with the id and contentHtml
   return {
     id,
-    content: matterResult.content,
+    content: contentWithoutTitle,
     title: matterResult.data.title,
     date: matterResult.data.date,
     ...matterResult.data
