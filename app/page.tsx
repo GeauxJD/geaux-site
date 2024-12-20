@@ -11,7 +11,10 @@ export default function Home() {
       </h1>
       <div className="space-y-4">
         {allPostsData.map(({ id, date, title }) => (
-          <article key={id} className="bg-white border border-gray-200 rounded-lg shadow hover:shadow-md transition-shadow">
+          <article 
+            key={id} 
+            className="bg-white border border-gray-200 rounded-lg shadow hover:shadow-md transition-shadow"
+          >
             <Link href={`/posts/${id}`} className="block p-6">
               <h2 className="text-lg font-semibold text-[rgb(36,85,163)] hover:underline mb-2">
                 {title}
