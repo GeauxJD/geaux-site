@@ -17,7 +17,7 @@ Originally established as Geaux.Online at www.geaux.com, the site was the first 
 
 Check out the awesome graphics and navigation!
 
-![Geaux.Online 1997 Graphic](/img/geaux-original.png)
+[Geaux.Online 1997 Graphic](/images/geaux-original.png)
 
 And behold the mighty source code of the original site:
 
