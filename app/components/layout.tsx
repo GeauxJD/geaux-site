@@ -28,7 +28,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           {children}
         </div>
       </main>
-      <footer className="py-6 bg-gray-50">
+      <footer className="py-6 bg-gray-50 mt-auto">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm text-gray-600">
           © 2023 Geaux Online
         </div>
