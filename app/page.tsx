@@ -5,22 +5,25 @@ export default function Home() {
   const allPostsData = getSortedPostsData()
 
   return (
-    <>
-      <div className="mb-12">
-        <h1 className="text-2xl font-bold text-black mb-4">Home of the world famous College Football Viewers Guide</h1>
-      </div>
-      <ul className="space-y-4">
+    <div>
+      <h1 className="text-2xl font-bold mb-8">
+        Home of the world famous College Football Viewers Guide
+      </h1>
+      <div className="space-y-4">
         {allPostsData.map(({ id, date, title }) => (
-          <li key={id} className="bg-white shadow rounded-lg p-6">
-            <Link href={`/posts/${id}`} className="text-xl font-semibold text-[rgb(36,85,163)] hover:underline">
-              {title}
+          <article key={id} className="bg-white border border-gray-200 rounded-lg shadow hover:shadow-md transition-shadow">
+            <Link href={`/posts/${id}`} className="block p-6">
+              <h2 className="text-lg font-semibold text-[rgb(36,85,163)] hover:underline mb-2">
+                {title}
+              </h2>
+              <time dateTime={date} className="text-sm text-gray-600">
+                {date}
+              </time>
             </Link>
-            <br />
-            <small className="text-gray-500">{date}</small>
-          </li>
+          </article>
         ))}
-      </ul>
-    </>
+      </div>
+    </div>
   )
 }
 
