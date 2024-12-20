@@ -19,7 +19,7 @@ export default function Post({ params }: { params: { id: string } }) {
           {postData.date}
         </time>
       </header>
-      <div className="prose prose-lg max-w-none">
+   <div className="prose prose-lg max-w-none">
         <ReactMarkdown>{postData.content}</ReactMarkdown>
       </div>
     </article>
