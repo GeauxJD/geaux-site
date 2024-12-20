@@ -3,8 +3,6 @@ title: "Geaux Online: Alabama vs Georgia - A Classic SEC Showdown"
 date: "2023-09-16"
 ---
 
-# Geaux Online: Alabama vs Georgia - A Classic SEC Showdown
-
 The college football world is buzzing with excitement as two SEC powerhouses, Alabama and Georgia, prepare to face off in what promises to be an epic battle on the gridiron.
 
 ## The Matchup
