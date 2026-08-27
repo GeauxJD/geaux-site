@@ -2,12 +2,13 @@
 ---
 
 //
-// IMPORTS
+// MODULES
 //
 
-@import "reset";
-@import "variables";
-// Syntax highlighting @import is at the bottom of this file
+@use "reset";
+@use "variables" as *;
+@use "highlights";
+@use "svg-icons";
 
 /**************/
 /* BASE RULES */
@@ -237,6 +238,43 @@ nav {
   }
 }
 
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  float: none;
+  width: 100%;
+  margin-top: 1.5em;
+  padding-top: 1em;
+  border-top: 1px solid $lightGray;
+  color: $gray;
+  font-family: $helveticaNeue;
+  font-size: 15px;
+  letter-spacing: .5px;
+
+  a {
+    margin: 0;
+    color: $blue;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    &:hover, &:active {
+      color: $darkGray;
+    }
+  }
+
+  @include mobile {
+    margin-top: 1em;
+    padding-top: .8em;
+    font-size: 14px;
+
+    a {
+      font-size: 13px;
+    }
+  }
+}
+
 //
 // .main
 //
@@ -244,6 +282,14 @@ nav {
 .posts > .post {
   padding-bottom: 2em;
   border-bottom: 1px solid $lightGray;
+
+  h1 {
+    margin-bottom: 8px;
+  }
+
+  .date {
+    margin-bottom: 8px;
+  }
 }
 
 .posts > .post:last-child {
@@ -283,7 +329,3 @@ footer {
   text-align: center;
 }
 
-// Settled on moving the import of syntax highlighting to the bottom of the CSS
-// ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
-@import "highlights";
-@import "svg-icons";
