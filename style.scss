@@ -278,7 +278,7 @@ nav {
 //
 
 .posts > .post {
-  padding-bottom: 2em;
+  padding-bottom: 1.25em;
   border-bottom: 1px solid $lightGray;
 
   h1 {
@@ -291,7 +291,7 @@ nav {
 }
 
 .posts > .post:last-child {
-  padding-bottom: 1em;
+  padding-bottom: .5em;
   border-bottom: none;
 }
 
@@ -310,6 +310,8 @@ nav {
   }
 
   .read-more {
+    display: inline-block;
+    margin-top: .5em;
     text-transform: uppercase;
     font-size: 15px;
   }
